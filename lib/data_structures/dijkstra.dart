@@ -51,6 +51,48 @@ class Dijkstra<E> {
   }
 
   List<Vertice<E>> shortestPathsImplementation2(Vertice<E> source) {
+    List<int> shortPaths = [];
+    List<Vertice<E>> unvisited = [];
+
+    /// source vertice inicial
+    /// graph
+
+    for (final vertex in graph.vertices) {
+      unvisited.add(vertex);
+    }
+
+    shortPaths.add(0);
+
+    /* while (!unvisited) */
     return [];
   }
 }
+/* 
+def dijkstras(G, start='A'):
+    shortest_paths = {}
+    unvisited = list(G.keys())
+
+    for node in unvisited:
+        shortest_paths[node] = infinity
+
+    shortest_paths[start] = 0
+
+    while unvisited:
+        min_node = None
+
+        for node in unvisited:
+            if min_node is None:
+                min_node = node
+            elif shortest_paths[node] < shortest_paths[min_node]:
+                min_node = node
+
+        for edge in G[min_node]:
+            cost = edge[0]
+            to_node = edge[1]
+
+            if cost + shortest_paths[min_node] < shortest_paths[to_node]:
+                shortest_paths[to_node] = cost + shortest_paths[min_node]
+
+        unvisited.remove(minNode)
+
+    return shortest_paths */
