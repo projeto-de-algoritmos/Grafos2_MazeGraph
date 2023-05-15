@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:app/components/lista_de_obstaculos.dart';
 import 'package:app/data_structures/lista_de_adjacencia.dart';
 import 'package:dartz/dartz.dart';
@@ -46,7 +48,9 @@ Tuple2<ListaDeAdjacencia<Color>, List<List<Color>>>
             (vertice) =>
                 vertice.indexX == linha + 1 && vertice.indexY == coluna);
         listaDeAdjacencia.addAresta(
-            inicio: verticeDeInicio, destino: verticeDeDestino);
+            inicio: verticeDeInicio,
+            destino: verticeDeDestino,
+            peso: Random().nextDouble() * 10);
       }
       // olhando pra linha de direita
       if (matriz[linha][coluna] == matriz[linha][coluna + 1]) {
@@ -56,7 +60,9 @@ Tuple2<ListaDeAdjacencia<Color>, List<List<Color>>>
             (vertice) =>
                 vertice.indexX == linha && vertice.indexY == coluna + 1);
         listaDeAdjacencia.addAresta(
-            inicio: verticeDeInicio, destino: verticeDeDestino);
+            inicio: verticeDeInicio,
+            destino: verticeDeDestino,
+            peso: Random().nextDouble() * 10);
       }
       // olhando pra linha de cima
       if (matriz[linha][coluna] == matriz[linha - 1][coluna]) {
@@ -66,7 +72,9 @@ Tuple2<ListaDeAdjacencia<Color>, List<List<Color>>>
             (vertice) =>
                 vertice.indexX == linha - 1 && vertice.indexY == coluna);
         listaDeAdjacencia.addAresta(
-            inicio: verticeDeInicio, destino: verticeDeDestino);
+            inicio: verticeDeInicio,
+            destino: verticeDeDestino,
+            peso: Random().nextDouble() * 10);
         // olhando pra linha de esquerda
       }
       if (matriz[linha][coluna] == matriz[linha][coluna - 1]) {
@@ -76,7 +84,9 @@ Tuple2<ListaDeAdjacencia<Color>, List<List<Color>>>
             (vertice) =>
                 vertice.indexX == linha && vertice.indexY == coluna - 1);
         listaDeAdjacencia.addAresta(
-            inicio: verticeDeInicio, destino: verticeDeDestino);
+            inicio: verticeDeInicio,
+            destino: verticeDeDestino,
+            peso: Random().nextDouble() * 10);
       }
     }
   }

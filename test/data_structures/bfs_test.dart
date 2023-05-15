@@ -1,8 +1,7 @@
 // ignore_for_file: avoid_print
 
-import 'package:app/data_structures/bfs.dart';
+import 'package:app/data_structures/dijkstra.dart';
 import 'package:app/data_structures/lista_de_adjacencia.dart';
-import 'package:app/data_structures/vertices.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -149,15 +148,20 @@ void main() {
 
     print("___________________BFS____________________");
 
-    final result = await listaDeAdjacencia.bfs(character, ganhou);
-    print("BFS: $result");
+    final dijkstra = Dijkstra<Color>(listaDeAdjacencia);
+
+    final result = dijkstra.shortestPaths(character);
+
+    /* final result = await listaDeAdjacencia.bfs(character, ganhou); */
+    print("Dijiskstra: $result");
 
     /* print(listaDeAdjacencia.toString()); */
 
     //! simulando ele andando
     print("___________________Andando____________________");
     Tuple2 oldPosition = const Tuple2(1, 1);
-    for (Vertice<Color> vertice in result) {
+
+    result.forEach((vertice, value) async {
       //Se ele ta na posição inicial não alteramos nada
       matriz[oldPosition.value1][oldPosition.value2] = Colors.transparent;
       matriz[vertice.indexX][vertice.indexY] = Colors.red;
@@ -165,7 +169,7 @@ void main() {
           "Posição anterior: $oldPosition ${matriz[oldPosition.value1][oldPosition.value2]} | Posicao Atual: ${vertice.indexX} x ${vertice.indexY} ${matriz[vertice.indexX][vertice.indexY]}");
       oldPosition = Tuple2(vertice.indexX, vertice.indexY);
       await Future.delayed(const Duration(milliseconds: 500));
-    }
+    });
   });
 }
 

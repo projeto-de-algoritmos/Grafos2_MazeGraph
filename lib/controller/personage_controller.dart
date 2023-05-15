@@ -1,4 +1,5 @@
 import 'package:app/data_structures/bfs.dart';
+import 'package:app/data_structures/dijkstra.dart';
 import 'package:app/data_structures/vertices.dart';
 import 'package:app/main.dart';
 import 'package:dartz/dartz.dart';
@@ -72,6 +73,23 @@ class GameController extends ValueNotifier<Tuple2<int, int>> {
           dado: Colors.transparent,
         ),
         lastVertice);
+  }
+
+  Future<void> rodaDijikstra() async {
+    final dijkstra = Dijkstra<Color>(matrizes.value1);
+    final finalPath = <Vertice<Color>>[];
+
+    dijkstra
+        .shortestPaths(
+          Vertice(
+            indexX: initialCharposition.head,
+            indexY: initialCharposition.tail,
+            dado: Colors.transparent,
+          ),
+        )
+        .entries
+        .forEach((element) => finalPath.add(element.key));
+    solvedGrafo = finalPath;
   }
 
   void comecaAandar(Color corASerPintada) async {
