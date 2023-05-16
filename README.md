@@ -26,7 +26,7 @@ MazeGraph é a continuação da Primeira entrega referente a grafos 1, na discip
 
 ## Video de apresentação
 
-https://www.youtube.com/watch?v=SzvQlCdPtmc
+https://youtu.be/qOZitSLoiWU
 
 
 ## Instalação 
