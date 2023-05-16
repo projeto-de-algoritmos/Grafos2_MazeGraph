@@ -162,7 +162,7 @@ class CustomButtonsDialog extends StatelessWidget {
           ),
           CustomButtom(
             backGroundColor: Colors.blue,
-            title: "Djikistra",
+            title: "Dijkstra",
             bottom: MediaQuery.of(context).size.height / 10,
             left: MediaQuery.of(context).size.width / 3,
             right: MediaQuery.of(context).size.width / 3,
