@@ -6,22 +6,28 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   test('Teste diskstra', () async {
     ListaDeAdjacencia<Color> listaDeAdjacencia = ListaDeAdjacencia<Color>();
-    final character = listaDeAdjacencia.criarVertice(Colors.red, 1, 1);
-    final ver12 = listaDeAdjacencia.criarVertice(Colors.black, 1, 2);
-    final ver13 = listaDeAdjacencia.criarVertice(Colors.transparent, 1, 3);
-    final ver21 = listaDeAdjacencia.criarVertice(Colors.transparent, 2, 1);
-    final ver22 = listaDeAdjacencia.criarVertice(Colors.black, 2, 2);
-    final ver23 = listaDeAdjacencia.criarVertice(Colors.transparent, 2, 3);
-    final ver31 = listaDeAdjacencia.criarVertice(Colors.transparent, 3, 1);
-    final ver32 = listaDeAdjacencia.criarVertice(Colors.transparent, 3, 2);
-    //Result
-    final ganhou = listaDeAdjacencia.criarVertice(Colors.yellow, 3, 3);
 
-    /* listaDeAdjacencia.addAresta(inicio: ver12, destino: ver13); */
+    final verA = listaDeAdjacencia.criarVertice(Colors.black, 1, 1);
+    final verB = listaDeAdjacencia.criarVertice(Colors.black, 1, 2);
+    final verC = listaDeAdjacencia.criarVertice(Colors.black, 1, 3);
+    final verD = listaDeAdjacencia.criarVertice(Colors.black, 1, 4);
+    final verE = listaDeAdjacencia.criarVertice(Colors.black, 1, 5);
+
+    listaDeAdjacencia.addAresta(inicio: verA, destino: verB, peso: 4);
+    listaDeAdjacencia.addAresta(inicio: verA, destino: verC, peso: 2);
+    listaDeAdjacencia.addAresta(inicio: verB, destino: verC, peso: 3);
+    listaDeAdjacencia.addAresta(inicio: verB, destino: verD, peso: 2);
+    listaDeAdjacencia.addAresta(inicio: verB, destino: verE, peso: 3);
+    listaDeAdjacencia.addAresta(inicio: verC, destino: verB, peso: 3);
+    listaDeAdjacencia.addAresta(inicio: verC, destino: verD, peso: 4);
+    listaDeAdjacencia.addAresta(inicio: verC, destino: verE, peso: 5);
+    listaDeAdjacencia.addAresta(inicio: verE, destino: verD, peso: 5);
 
     final dijkstra = Dijkstra<Color>(listaDeAdjacencia);
 
-    final result = dijkstra.shortestPathsImplementation2(character);
+    final result = dijkstra.shortestPaths(verA);
+
+    print(listaDeAdjacencia);
 
     print(result);
   });

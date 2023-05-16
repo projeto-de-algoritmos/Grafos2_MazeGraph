@@ -79,17 +79,13 @@ class GameController extends ValueNotifier<Tuple2<int, int>> {
     final dijkstra = Dijkstra<Color>(matrizes.value1);
     final finalPath = <Vertice<Color>>[];
 
-    dijkstra
-        .shortestPaths(
-          Vertice(
-            indexX: initialCharposition.head,
-            indexY: initialCharposition.tail,
-            dado: Colors.transparent,
-          ),
-        )
-        .entries
-        .forEach((element) => finalPath.add(element.key));
-    solvedGrafo = finalPath;
+    solvedGrafo = await matrizes.value1.findBFSpath(
+        Vertice(
+          indexX: initialCharposition.head,
+          indexY: initialCharposition.tail,
+          dado: Colors.transparent,
+        ),
+        lastVertice);
   }
 
   void comecaAandar(Color corASerPintada) async {

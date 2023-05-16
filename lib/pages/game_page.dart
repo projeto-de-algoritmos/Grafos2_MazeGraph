@@ -161,14 +161,14 @@ class CustomButtonsDialog extends StatelessWidget {
             },
           ),
           CustomButtom(
-            backGroundColor: Colors.green,
+            backGroundColor: Colors.blue,
             title: "Djikistra",
             bottom: MediaQuery.of(context).size.height / 10,
             left: MediaQuery.of(context).size.width / 3,
             right: MediaQuery.of(context).size.width / 3,
             onPressed: () async {
-              await personagemPositionController.rodaDijikstra();
-              personagemPositionController.comecaAandar(Colors.green);
+              await personagemPositionController.rodaBFSpath();
+              personagemPositionController.comecaAandar(Colors.blue);
               Navigator.of(context).pop();
             },
           ),
