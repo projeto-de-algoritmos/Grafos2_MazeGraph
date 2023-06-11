@@ -13,6 +13,7 @@
 
 MazeGraph é um software que busca mostrar visualmente o funcionamento dos algoritmos de Depth First Search(DFS) e Breadth First Search(BFS). A utilização dos algoritmos  se dá pela resolução de um labirinto 30x30, representado por uma matriz, onde cada posição (i,j) representa um nó do grafo. Assim sendo possivel utilizar a teoria dos grafos juntamente com seus algoritmos de buscas, o usuário poderá optar por rodar a DFS, rodar BFS ou achar o menor caminho até a saida do labirinto.
 
+Agora com a segunda versão é possivel utilizar também o algorimto de Dijkstra para a resolução do labirinto
 ## Primeira entrega
 
 MazeGraph é a continuação da Primeira entrega referente a grafos 1, na disciplina de projeto de algoritmos, e pode ser encontrada clicando nesse link [aqui](https://github.com/projeto-de-algoritmos/Grafos1_MazeGraph).
@@ -22,7 +23,9 @@ MazeGraph é a continuação da Primeira entrega referente a grafos 1, na discip
 <img src="https://user-images.githubusercontent.com/60429513/235533881-8e17f087-87bb-4b86-a457-ea68a83d2d2f.png" alt="drawing" width="400"/>
 <img src="https://user-images.githubusercontent.com/60429513/235533880-91b3c0bc-a25a-4ff5-b3f3-82f0481294c4.png" alt="drawing" width="400"/>
 <img src="https://user-images.githubusercontent.com/60429513/235533888-8dc59ff8-1228-4f5b-a40c-171f6de217ec.png" alt="drawing" width="400"/>
-<img src="https://user-images.githubusercontent.com/60429513/235533886-f0dcf0d1-4113-4f8b-99db-cf5554a551ad.png" alt="drawing" width="400"/> 
+<img src="https://github.com/projeto-de-algoritmos/Grafos2_MazeGraph/assets/79341819/efcd369b-ad19-4c18-b902-bba32d0f23d4" alt="drawing" width="400"/>
+
+
 
 ## Video de apresentação
 
